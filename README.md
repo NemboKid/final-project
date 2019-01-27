@@ -62,4 +62,5 @@ Versions:
 
 
 **Ropsten Testnet**
+
 The project is deployed to the Ropsten Testnet (Infura). Check the file `deployed_addresses.txt` to see the addresses. Also check `infura_setup.md` to see what changes to make if you want to interact with the frontend when it's on Ropsten.
