@@ -1,4 +1,4 @@
-# simple-dapp
+# Final Project
 
 
 ## :computer: Contract purpose and overview
