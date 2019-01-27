@@ -1,0 +1,665 @@
+@import url(https://fonts.googleapis.com/css?family=Sarabun);
+
+
+
+
+/* CSS reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+    margin:0;
+    padding:0;
+}
+html, body {
+    margin:0;
+    padding:0;
+    font-family: 'Sarabun', sans-serif;
+}
+
+@keyframes example {
+  0%   {color: red;}
+  10%  {color: yellow;}
+  20%  {color: blue;}
+  30%  {color: green;}
+  40% {color: red;}
+  50%  {color: yellow;}
+  60%  {color: blue;}
+  70%  {color: red;}
+  80%  {color: yellow;}
+  90%  {color: blue;}
+  100%  {color: green;}
+}
+
+
+.header img {
+  margin-left: 5px;
+  float: left;
+  padding: 2px;
+  width: 70px;
+  height: 105px;
+  position: absolute;
+  transition: .5s ease;
+  top: 5px;
+  left: 10px;
+  box-shadow: #234357;
+}
+
+#hrr {
+  margin: 0px;
+  height: 2px;
+  color: #123455;
+  background-color: black;
+  border: none;
+}
+
+.header {
+	width: 100%;
+  background-color: #ADB5BC;
+  margin-top: 0px;
+  padding: 0px;
+  height: 130px;
+  min-height: 20px;
+  min-width: 50px;
+}
+
+.header h1{
+  position: absolute;
+  transition: .5s ease;
+  top: 26px;
+  left: 150px;
+  text-align: center;
+  font-size: 36px;
+  color: #313131;
+  text-shadow: 2px 1px 2px black;
+}
+
+.header h3{
+  position: absolute;
+  transition: .5s ease;
+  top: 75px;
+  left: 170px;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  text-shadow: 0px 1px 1px black;
+}
+
+.main {
+  margin-top: 0px;
+  margin: 0px;
+  height: 500px;
+  padding: 5px;
+  background-color: #eee;
+  box-shadow: 3px 7px 5px #435B70;
+}
+
+.nextDiv {
+  margin-top: 0px;
+  margin: 0px;
+  height: 700px;
+  padding: 5px;
+  background-color: #eee;
+}
+
+.infoDiv {
+  margin-top: 0px;
+  margin: 0px;
+  height: 300px;
+  padding: 5px;
+  background-color: #eee;
+}
+
+.info2{
+  position: absolute;
+  transition: .5s ease;
+  top: 1500px;
+  margin-left: 10px;
+}
+
+#eth{
+  position: absolute;
+  transition: .5s ease;
+  right: 350px;
+  top: 1380px;
+  padding: 0px;
+  width: 70px;
+  height: 110px;
+}
+
+.top {
+  background: #fc4a1a;
+  margin-top: 0px;
+
+}
+
+#buttons {
+  padding-top: 5px;
+  text-align: center;
+}
+
+.btn {
+  border-radius: 6px;
+  padding: 5px 7px;
+  font-size: 14px;
+  text-align: center;
+  margin: 5px;
+  color: #fff;
+  position: relative;
+}
+
+.btn:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.blue {
+  background-color: #435B70;
+  box-shadow: 0px 2px 2px 1px #435B70;
+}
+
+
+.blue:hover {
+  background-color: #8795A2;
+}
+
+.addAdmin {
+  background-color: #435B70;
+  box-shadow: 0px 2px 2px 1px #435B70;
+}
+
+.addAdmin:hover {
+  background-color: #8795A2;
+}
+
+.extendiz {
+  background-color: #435B70;
+  box-shadow: 0px 2px 2px 1px #435B70;
+}
+
+.extendiz:hover {
+  background-color: #8795A2;
+}
+
+.removeAdmin {
+  background-color: #435B70;
+  box-shadow: 0px 2px 2px 1px #435B70;
+}
+
+.removeAdmin:hover {
+  background-color: #8795A2;
+}
+
+.removeDev {
+  background-color: #435B70;
+  box-shadow: 0px 2px 2px 1px #435B70;
+}
+
+.removeDev:hover {
+  background-color: #8795A2;
+}
+
+.startContract {
+  background-color: #39912b;
+  box-shadow: 0.2px 2px 0.1px 0.2px #2c6d21;
+}
+
+.startContract:hover {
+  background-color: #237c13;
+}
+
+.adminOr {
+  background-color: #435B70;
+  box-shadow: 0px 2px 2px 1px #435B70;
+}
+
+.adminOr:hover {
+  background-color: #237c13;
+}
+
+.showWeight{
+  background-color: #435B70;
+  box-shadow: 0px 2px 2px 1px #435B70;
+}
+
+.showWeight:hover {
+  background-color: #237c13;
+}
+
+.pauseContract {
+  background-color: #435B70;
+  box-shadow: 0px 2px 2px 1px #435B70;
+}
+
+.pauseContract:hover {
+  background-color: #aa060c;
+}
+
+.continueContract {
+  background-color: #435B70;
+  box-shadow: 0px 2px 2px 1px #435B70;
+}
+
+.continueContract:hover {
+  background-color: #25820e;
+}
+
+.killContract {
+  background-color: #e82930;
+  box-shadow: 0px 4px 0px 0px #c6717e;
+  position: absolute;
+  transition: .5s ease;
+  top: 840px;
+  right: 50px;
+
+}
+
+.killContract:hover {
+  background-color: #aa060c;
+}
+
+#oracleButton {
+  border-color: black;
+  background-color: #8795A2;
+  padding-top: 5px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 7px;
+  font-size: 14px;
+  text-align: center;
+  margin: 5px;
+  color: black;
+  font-size: 14px;
+  position: absolute;
+  transition: .5s ease;
+  top: 20px;
+  right: 10px;
+}
+
+#oracleButton:hover {
+  background-color: #eee;
+  border-color: black;
+  color: black;
+}
+
+#withdrawbutton {
+  border-color: black;
+  background-color: #8795A2;
+  box-shadow: 0.2px 2px 0.1px 0.2px #eeee;
+  padding-top: 5px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 7px;
+  font-size: 14px;
+  text-align: center;
+  margin: 5px;
+  color: black;
+  font-size: 20px;
+}
+
+#withdrawbutton:hover {
+  background-color: #38b72f;
+  border-color: black;
+  color: white;
+}
+
+.addDev {
+  background-color: #435B70;
+  box-shadow: 0px 2px 2px 1px #435B70;
+}
+
+.addDev:hover {
+  background-color: #8795A2;
+}
+
+.roll {
+  background-color: #2e54ad;
+  box-shadow: 0px 2px 0px 0px #4569bc;
+}
+
+.devInfo {
+  background-color: #435B70;
+  box-shadow: 0px 2px 2px 1px #435B70;
+}
+
+.devInfo:hover {
+  background-color: #8795A2;
+}
+
+#acceptStep{
+  border-color: black;
+  background-color: #8795A2;
+  box-shadow: 0.2px 2px 0.1px 0.2px #eeee;
+  padding-top: 5px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 7px;
+  font-size: 14px;
+  text-align: center;
+  margin: 5px;
+  color: black;
+  font-size: 20px;
+}
+
+#acceptStep:hover {
+  background-color: #38b72f;
+  border-color: black;
+  color: white;
+}
+
+.infoContract{
+  background-color: #435B70;
+  box-shadow: 0px 2px 2px 1px #435B70;
+}
+
+.infoContract:hover {
+  background-color: #8795A2;
+}
+
+.ul {
+  list-style-type: square;
+  margin: 0;
+  padding: 5;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.test {
+  background-color: #2fff;
+}
+
+.vanni {
+  border-radius: 5px;
+  background-color: #eee;
+  height: 280px;
+  width: 470px;
+  float: left;
+  padding-top: 6px;
+  display: inline-block;
+  margin-left: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: absolute;
+  transition: .5s ease;
+  border: 2px solid black;
+  top: 250px;
+  right: 130px;
+  box-shadow: 10px 2px 10px 0px rgba(0,0,0,0.3);
+}
+
+.buttonVanni {
+  position: absolute;
+  transition: .5s ease;
+  top: 200px;
+  right: 510px;
+}
+
+.infoText1 {
+  position: absolute;
+  transition: .5s ease;
+  top: 1400px;
+  right: 450px;
+  font-size: 32px;
+}
+
+.counter {
+  color: black;
+  float: left;
+  display: inline-block;
+  margin-left: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: absolute;
+  transition: .5s ease;
+  top: 780px;
+  right: 610px;
+}
+
+.countmf {
+  color: black;
+  font-size: 70px;
+  border-style: solid;
+  border-radius: 5px;
+  float: left;
+  display: inline-block;
+  padding-left: 7px;
+  padding-right: 5px;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  transition: .5s ease;
+  border: 2px solid black;
+  animation-name: example;
+  animation-duration: 30s;
+  animation-iteration-count: 3;
+}
+
+.countmf:hover {
+  color: blue;
+}
+
+.twentysixpoint {
+  line-height: 14pt;
+}
+
+.onOff {
+  position:absolute;
+  transition: .5s ease;
+  top: 670px;
+  right: 50px;
+}
+
+.buttonmix {
+  position:absolute;
+  transition: .5s ease;
+  top: 700px;
+  right: 550px;
+}
+
+#hrr2{
+  width: 100%;
+  position:absolute;
+  transition: .5s ease;
+  top: 560px;
+  margin: 0px;
+  height: 2px;
+  color: #123455;
+  background-color: black;
+  border: none;
+}
+
+.topic1 {
+  position:absolute;
+  transition: .5s ease;
+  top: 170px;
+  right: 150px;
+}
+
+.isAdmin {
+  position:absolute;
+  transition: .5s ease;
+  top: 1400px;
+  right: 450px;
+}
+
+.infoDev {
+  border-radius: 7px;
+  min-height: 210px;
+  min-width: 450px;
+  padding-top: 6px;
+  float: left;
+  margin-left: 10px;
+  padding-left: 5px;
+  transition: .5s ease;
+  position: absolute;
+  top: 1050px;
+  border: 2px solid black;
+  left: 1px;
+  box-shadow: 10px 2px 10px 0px rgba(0,0,0,0.3);
+}
+
+.devis {
+  transition: .5s ease;
+  position: absolute;
+  top: 960px;
+  left: 15px;
+}
+
+.devis2 {
+  transition: .5s ease;
+  position: absolute;
+  top: 1000px;
+  left: 15px;
+}
+
+.startContractz {
+  width: 60px;
+  height: 20px;
+}
+
+.timez {
+  width: 60px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.sendz {
+  width: 60px;
+  height: 20px;
+}
+
+.adminTools {
+  position: absolute;
+  transition: .5s ease;
+  top: 710px;
+  left: 10px;
+}
+
+.showWeightButton {
+  position: absolute;
+  transition: .5s ease;
+  top: 1000px;
+  right: 60px;
+}
+
+.startiz {
+  position: absolute;
+  background-color: #eee;
+  border-radius: 5px;
+  border: 2px solid black;
+  transition: .5s ease;
+  top: 233px;
+  left: 60px;
+  height: 80px;
+  width: 280px;
+  font-size: 14px;
+  border-radius: 5px;
+  padding-left: 6px;
+  box-sizing: 1px;
+}
+
+.alla {
+  position: absolute;
+  transition: .5s ease;
+  top: 20px;
+  left: 30px;
+}
+
+.description1 {
+  position: absolute;
+  transition: .5s ease;
+  top: 340px;
+  font-size: 14px;
+  width: 400px;
+  left: 60px;
+}
+
+.someDescription {
+  position: absolute;
+  transition: .5s ease;
+  font-size: 34px;
+  top: 580px;
+  left: 600px;
+}
+
+.someDescription2 {
+  position: absolute;
+  transition: .5s ease;
+  font-size: 20px;
+  top: 670px;
+  left: 10px;
+}
+
+.textis h3 {
+  position: absolute;
+  transition: .5s ease;
+  font-size: 20px;
+  left: 60px;
+}
+
+.someText {
+  position: absolute;
+  transition: .5s ease;
+  top: 160px;
+  font-size: 16px;
+  left: 70px;
+  height: 230px;
+  width: 350px;
+}
+
+.rainbow {
+  width: 200px;
+  height: 205px;
+  position: absolute;
+  transition: .5s ease;
+  top: 300px;
+  right: 300px;
+}
+
+.extend {
+  position: absolute;
+  transition: .5s ease;
+  top: 760px;
+  right: 30px;
+}
+
+.infoDevv {
+  width: 280px;
+  height: 20px;
+}
+
+.etherAmount {
+  width: 60px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.devaddressinlist {
+  width: 120px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.singledevaddress {
+  width: 280px;
+  height: 20px;
+}
+
+.devWeightz {
+  width: 60px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.devAddrez {
+  width: 280px;
+  height: 20px;
+}
+
+.addAdminz {
+  width: 280px;
+  height: 20px;
+}
+
+.removeAdminz {
+  width: 280px;
+  height: 20px;
+}

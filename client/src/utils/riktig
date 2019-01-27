@@ -1,0 +1,235 @@
+import React, { Component } from "react";
+import ReactDOM from 'react-dom'
+//import { contractAddr } from "./setup.js";
+//import SimpleStorageContract from "./contracts/SimpleStorage.json";
+import PlatformzNew from "./contracts/PlatformzNew.json";
+import getWeb3 from "./utils/getWeb3";
+//import $ from 'jquery';
+import "./App.css";
+//import axios from 'axios';
+
+
+
+class App extends Component {
+
+
+  state = {
+    web3: null,
+    accounts: null,
+    contract: null,
+    isActive: null
+  };
+
+  state = {
+    developerAddresses: [
+      {address: 0x0303030003030303},
+      {address: 0x090909090909090990},
+      {address: 0x090909090909090990}
+    ]
+  };
+
+
+  componentDidMount = async () => {
+    try {
+      // Get network provider and web3 instance.
+      const web3 = await getWeb3();
+      // Use web3 to get the user's accounts.
+      const accounts = await web3.eth.getAccounts();
+
+      // Get the contract instance.
+      const networkId = await web3.eth.net.getId();
+      const deployedNetwork = PlatformzNew.networks[networkId];
+      const instance = new web3.eth.Contract(
+        PlatformzNew.abi,
+        deployedNetwork && deployedNetwork.address,
+      );
+
+      // Set web3, accounts, and contract to the state, and then proceed with an
+      // example of interacting with the contract's methods.
+      this.setState({ web3, accounts, contract: instance });
+    } catch (error) {
+      // Catch any errors for any of the above operations.
+      alert(
+        `Failed to load web3, accounts, or contract. Check console for details.`,
+      );
+      console.error(error);
+    }
+    //ReactDOM.findDOMNode(this.addressInput).focus();
+  };
+
+  runExample = async () => {
+    console.log("hej");
+    //const { accounts, contract } = this.state;
+    //const numberOfDevs = this.test;
+
+    // Stores a given value, 5 by default.
+    //await
+    //contract.methods.contractActive().call({ from: accounts[0] });
+    //contract.methods.numberOfDevs().send({ from: accounts[0] });
+
+    // Get the value from the contract to prove it worked.
+    //const response = await contract.methods.contractActive().call({ from: accounts[0] });
+    //const response2 = await contract.methods.numberOfDevs().call();
+
+    // Update state with the result.
+  /*this.setState({ accounts: response });
+    console.log(this.state.response);*/
+  };
+
+  addDevAddress = (devInfo) => {
+    this.setState(prevState => ({
+      developerAddresses: prevState.developerAddresses.concat(devInfo)
+    }));
+  };
+
+  render() {
+    return(
+      <div>
+        <Form onSubmit={this.addDevAddress}  />
+        <AddressList developerAddresses={this.state.developerAddresses} />
+      </div>
+    );
+  }
+}
+
+
+/*  addAdminFunction() {
+    const account = accounts[0]
+    contract.methods.addAdmin()
+    .send({
+      from: account,
+      value: _admin
+    })
+  };
+
+
+/*  async getContractInfo(address) {
+  const contract = instance;
+
+  const steps = await contract.methods.stepCount().call()
+  const balance = await contract.methods.checkBalance().call()
+  const active = await contract.methods.contractActive().call()
+  const contractEnds = await contract.methods.contractEndTime().call()
+  const stepTime = await contract.methods.timeStep().call()
+  const creator = await contract.methods.creator().call()
+  const owner = await contract.methods.owner().call()
+  const depositAmount = await contract.methods.depositAmount().call()
+  const devNumber = await contract.methods.numberOfDevs().call()
+
+
+  const accounts = await web3.eth.getAccounts()
+  return {
+    steps: steps,
+    balance: balanceOfContract,
+    active: isActive,
+    contractEnds: endTime,
+    stepTime: stepTime,
+    craetor: creator,
+    owner: owner,
+    depositAmount: depositAmount,
+    devNumber: devNumber,
+  }
+}*/
+
+  addFruit(fruit) {
+    state = {
+      fruits: banan,
+      fruits: pear
+    };
+    //create a unike key for each new fruit item
+    // update the state object
+    this.state.fruits['fruit-'] = fruit;
+    // set the state
+    this.setState({ fruits : this.state.fruits });
+  };
+
+   render:() {
+     return (
+       <div className="component-wrapper">
+         <FruitList fruits={this.state.fruits} />
+         <AddFruitForm addFruit={this.addFruit} />
+       </div>
+     );
+    }
+   });
+
+
+class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {devAddress: ''};
+
+    //this.handleChange = this.handleChange.bind(this);
+
+
+    let fruit = this.refs.fruitName.value;
+
+  /*const listDev = this.handleSubmit.map((list) =>
+  <li> {list} </li>);
+  */
+
+  handleSubmit = (event) => {
+    this.setState({value: event.target.devAddress});
+  };
+
+  /*handleChange(event) {
+    this.setState({value: event.target.devAddress});
+  }
+
+  handleSubmit(event) {
+    return('A name was submitted: ' + this.state.devAddress);
+    //event.preventDefault();
+  }*/
+
+  render() {
+    return (
+      <div>
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Dev Address
+          <input type="text"
+            value={this.state.devAddress}
+            onChange={(event) => this.setState({ devAddress: event.target.value})}
+            placeholder="Address"
+            reg="fruitName" />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    );
+  }
+}
+
+//onChange={(event) => this.setState({ developerAddress: event.target.value})}
+
+const Addresses = (props) => {
+  return(
+    <div>
+      Address here...
+    </div>
+  );
+}
+
+const AddressList = (props) => {
+  return(
+    <div>
+      {props.developerAddresses.map(address => <Addresses {...address} /> )}
+    </div>
+  );
+}
+
+
+class Combine extends Component {
+  render() {
+    return(
+      <div>
+        <App />
+      </div>
+    );
+  }
+}
+
+
+
+ReactDOM.render(<Combine />, document.getElementById('root'));
+export default App;
