@@ -52,12 +52,13 @@ Versions:
 - MacOS 10.14 (Mojave)
 
 
-**Instructions for setting up everything:**
+**Instructions to setup project:**
 1) Clone repo
 2) Start ganache-cli in terminal
-3) From the terminal, in the client folder inside the project, type `npm run start`. This should start the server on http://localhost:3000/
-4) In the project folder, type `truffle migrate`, could also be done with the flag `--reset`
-5) On localhost:3000, start interact with the contract through Metamask. Make sure to import the seed words you got from `ganache-cli`
+3) In your terminal, from client folder, `npm install`. This step was impossible to transfer from my local machine and isn't dependent on the Github files. Without npm install here, react-script can't be found.  
+4) From the terminal, in the client folder inside the project, type `npm run start`. This should start the server on http://localhost:3000/
+5) In the project folder, type `truffle migrate`, could also be done with the flag `--reset`
+6) On localhost:3000, start interact with the contract through Metamask. Make sure to import the seed words you got from `ganache-cli`
 
 
 **Ropsten Testnet**
