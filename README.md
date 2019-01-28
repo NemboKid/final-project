@@ -22,7 +22,7 @@ This is indeed a simple bounty contract. I did not aim to copy any other bounty 
 
 ### :memo: Contract Structure
 
-The contract includes three different roles: i) owner, ii) developer and iii) admin. They serve different purposes which will be explained in greater detail below.
+The contract includes three different roles: i) owner, ii) developer and iii) admin. They serve different purposes which will be explained in detail below.
 
 
 **1) Owner**
