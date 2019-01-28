@@ -10,4 +10,8 @@ This is the first time I'm in contact with frontend development, and my website 
 
 - Developers must be addded before contract start and their total weight must add up to 100%. Example: 2 developers; 1 has 40% and the other 60%.
 
+- Developers cannot be removed when contract's active. Can only be done if it's paused or not yet started.
+
+- Admins can do everything that the owner can do, except the owner has to put in money into the contract. The owner is also the address in the occassion of selfdestruct(owner).
+
 
