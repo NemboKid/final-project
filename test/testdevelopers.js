@@ -3,7 +3,7 @@ var assert = require('assert');
 let contractInstance;
 const Web3 = require('web3');
 
-
+//This test is written only for the role Developers and goes from start to finish.
 contract('TestDevelopers', (accounts) => {
    beforeEach(async () => {
       contractInstance = await WorkingContract.deployed()
@@ -16,7 +16,7 @@ contract('TestDevelopers', (accounts) => {
       assert.equal(isOwner, isDeployer, "they should be the same")
     });
 
-
+   //Adds 1 developer, 40% weight
     it('Add Developer1', async () => {
       const developer1 = accounts[1];
       const weight1 = 40;
@@ -26,7 +26,8 @@ contract('TestDevelopers', (accounts) => {
       const checkWeight = await contractInstance.weightGuard.call()
       assert.equal(checkDevs == 1, checkWeight == 40, "Didn't add developer properly")
     })
-
+   
+   //Adds another with 60% weight. Total 100%
     it('Add Developer2', async () => {
       const developer2 = accounts[2];
       const weight2 = 60;
@@ -37,7 +38,7 @@ contract('TestDevelopers', (accounts) => {
       assert.equal(checkDevs == 2, checkWeight == 100, "Didn't add developer properly")
     })
 
-
+   //Starts it...
     it('Start Contract', async () => {
       //const amount = web3.utils.toWei('2', 'ether');
       //const numberOfWeeks = 4;
@@ -50,6 +51,7 @@ contract('TestDevelopers', (accounts) => {
       assert.equal(isTrue, true)
     })
 
+      //Accept all steps all at once (there are 4 steps)
     it('Accept Step1', async () => {
       //const amount = web3.utils.toWei('2', 'ether');
       //const numberOfWeeks = 4;
@@ -86,7 +88,7 @@ contract('TestDevelopers', (accounts) => {
       assert.equal(stepCounter, 4)
     })
 
-
+   //Can all two developers withdraw the money after the 4 steps have been accepted?
     it('Withdraw Money1', async () => {
       const developer1 = accounts[1];
       const isOwner = accounts[0];
@@ -143,6 +145,7 @@ contract('TestDevelopers', (accounts) => {
       const depositSum = await contractInstance.depositAmount({from: isOwner})
     })
 
+     //Here I check if the balance is empty and all funds has been withdrawed. 
     it('Withdraw Money8', async () => {
       const developer2 = accounts[2];
       const isOwner = accounts[0];
@@ -151,7 +154,8 @@ contract('TestDevelopers', (accounts) => {
       const depositSum = await contractInstance.depositAmount({from: isOwner})
       assert.equal(balanceContract, 0, "The balance after all withdrawals should be 0");
     })
-
+   
+      //With the contract all empty, can a developer withdraw from it?
     it('Test to Withdraw From Empty Contract', async () => {
       const developer2 = accounts[2];
       const isOwner = accounts[0];
