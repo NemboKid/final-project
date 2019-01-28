@@ -124,6 +124,16 @@ contract('WorkingContract', (accounts) => {
       const expected = 75;
       assert.equal(balance, expected);
     })
+   
+   it('The sum should not overflow', async () => {
+    try {
+      // Trying to sum 2^256 + 5, which should overflow and throw an exception in the best case
+      const sumResult = contractInstance.sumNumbers(2e256, 5)
+      assert.ok(false, 'The contract should throw an exception to avoid overflowing and thus making bad calculations')
+   } catch(error) {
+      assert.ok(true, 'The contract is throwing which is the expected behaviour when you try to overflow')
+   }
+})
 
 
 })
