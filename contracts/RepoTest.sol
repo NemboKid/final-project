@@ -28,7 +28,7 @@ contract RepoTest is usingOraclize {
            emit LogNewOraclizeQuery("Oraclize query was NOT sent, please add some ETH to cover for the query fee");
        } else {
            emit LogNewOraclizeQuery("Oraclize query was sent, standing by for the answer..");
-           oraclize_query("URL", "json(https://api.github.com/repos/NemboKid/simple-dapp).stargazers_count");
+           oraclize_query("URL", "json(https://api.github.com/repos/NemboKid/final-project).stargazers_count");
        }
    }
 
