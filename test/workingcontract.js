@@ -4,7 +4,7 @@ var assert = require('assert')
 let contractInstance;
 const Web3 = require('web3');
 
-//const accounts = getWeb3.eth.getAccounts();
+//This is a general test that tests the workflow of the contract. 
 
 contract('WorkingContract', (accounts) => {
    beforeEach(async () => {
@@ -36,6 +36,7 @@ contract('WorkingContract', (accounts) => {
       assert(checker)
     })
 
+    //Owner removes admin
     it('Remove Admin', async () => {
       const isOwner = accounts[0];
       const admin1 = accounts[2];
@@ -46,7 +47,7 @@ contract('WorkingContract', (accounts) => {
         assert(error)
       }
     })
-
+      //Removes developer
     it('Remove Developer', async () => {
       const developer1 = accounts[1];
       const isOwner = accounts[0];
@@ -56,6 +57,7 @@ contract('WorkingContract', (accounts) => {
       assert.equal(checkDevs, expected);
     })
 
+     //Adds dev again in order to fulfill requirements for starting contract
     it('Add Developer again', async () => {
       const developer1 = accounts[1];
       const weight1 = 100;
@@ -88,7 +90,7 @@ contract('WorkingContract', (accounts) => {
       assert.equal(stepCounter, 1)
     })
 
-
+     //After starting contract and accepting a step, can developer withdraw money as expected?
     it('Withdraw Money', async () => {
       const developer1 = accounts[1];
       const isOwner = accounts[0];
@@ -110,14 +112,14 @@ contract('WorkingContract', (accounts) => {
       console.log(newTime.toNumber())
     })
 
-
+      //Is the developer reward weight the expected 100?
     it('Check Weight', async () => {
       const weight = await contractInstance.weightGuard.call();
       const expected = 100;
       assert.equal(weight, expected);
     })
 
-
+      //Is the balance the expected after one withdrawal?
     it('Check Balance', async () => {
       const isOwner = accounts[0];
       const balance = await contractInstance.checkBalance({from:isOwner});
@@ -125,6 +127,8 @@ contract('WorkingContract', (accounts) => {
       assert.equal(balance, expected);
     })
    
+   //This test function is useless since I didn't find a function in my contract that could check this and I didn't want to 
+   //write a function only for this purpose. I'm aware that testing for overflows is very important!
    it('The sum should not overflow', async () => {
     try {
       // Trying to sum 2^256 + 5, which should overflow and throw an exception in the best case
@@ -138,6 +142,8 @@ contract('WorkingContract', (accounts) => {
 
 })
 
+//Oracle tests starts here, comes from the contract RepoTest, which checks the stars this very repo has.
+//However, the tests should only be applicable when operating on testnet, as the Oracle isn't available on private net.
 contract('RepoTest', (accounts) => {
    beforeEach(async () => {
       contractInstance = await RepoTest.deployed()
