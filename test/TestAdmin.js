@@ -3,13 +3,13 @@ var assert = require('assert')
 let contractInstance;
 const Web3 = require('web3');
 
-//const accounts = getWeb3.eth.getAccounts();
-
+//Initalize contract
 contract('TestAdmin', (accounts) => {
    beforeEach(async () => {
       contractInstance = await WorkingContract.deployed()
    })
 
+   //Check that deployer becomes owner
    it('Contract deployer becomes owner', async () => {
       const isOwner = await contractInstance.owner.call();
       const isDeployer = await accounts[0];
@@ -17,14 +17,15 @@ contract('TestAdmin', (accounts) => {
       assert.equal(isOwner, isDeployer, "they should be the same")
     });
 
-
+   //Can owner add admin?
     it('Owner Adds Admin', async () => {
       const isOwner = accounts[0];
       const admin1 = accounts[1];
       const checker = await contractInstance.addAdmin(admin1, {from: isOwner})
       assert(checker)
     })
-
+     
+   //...Yet another one?
     it('Admin Adds Another Admin', async () => {
       const admin1 = accounts[1];
       const admin5 = accounts[5];
@@ -32,7 +33,7 @@ contract('TestAdmin', (accounts) => {
       assert(checker)
     })
 
-
+      //Can Admin add developer as supposed?
     it('Admin Adds Developer', async () => {
       const developer2 = accounts[2];
       const weight1 = 100;
@@ -43,7 +44,7 @@ contract('TestAdmin', (accounts) => {
       assert.equal(checkDevs == 1, checkWeight == 100, "Couldn't add developer properly")
     })
 
-
+      //...Can he then remove him?
     it('Admin Removes Developer', async () => {
       const developer2 = accounts[2];
       const Admin1 = accounts[1];
@@ -53,6 +54,7 @@ contract('TestAdmin', (accounts) => {
       assert.equal(checkDevs, expected);
     })
 
+     //Re-enter him since I need to fulfill the conditions to Start the contract
     it('Add Developer again', async () => {
       const developer3 = accounts[3];
       const weight1 = 100;
@@ -63,7 +65,7 @@ contract('TestAdmin', (accounts) => {
       assert.equal(checkDevs == 1, checkWeight == 100, "Didn't add developer properly")
     })
 
-
+     //And Admin can indeed start it?
     it('Admin Can Start Contract', async () => {
       const Admin1 = accounts[1];
       await contractInstance.startWork(4, {
@@ -74,6 +76,7 @@ contract('TestAdmin', (accounts) => {
       assert.equal(isTrue, true)
     })
 
+   //Can he accept a step?
     it('Admin Can Accept Step', async () => {
       const Admin1 = accounts[1];
       await contractInstance.stepAccept( {from: Admin1});
@@ -81,7 +84,7 @@ contract('TestAdmin', (accounts) => {
       assert.equal(stepCounter, 1)
     })
 
-
+   //Can the deadline be extended by admin?
     it('Admin Can Extend Deadline', async () => {
       const Admin1 = accounts[1];
       const oldTime = await contractInstance.contractEndTime.call()
