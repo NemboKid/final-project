@@ -4,8 +4,8 @@ var assert = require('assert')
 let contractInstance;
 const Web3 = require('web3');
 
-//const accounts = getWeb3.eth.getAccounts();
 
+//This test is to Pause, Resume and then Kill the contract. 
 contract('Pause, Resume, Kill', (accounts) => {
    beforeEach(async () => {
       contractInstance = await WorkingContract.deployed()
@@ -19,6 +19,7 @@ contract('Pause, Resume, Kill', (accounts) => {
     });
 
 
+     //First fulfills the conditions to start the contract (one developer with 100% weight)
     it('Add Developer', async () => {
       const developer1 = accounts[1];
       const weight1 = 100;
@@ -29,7 +30,7 @@ contract('Pause, Resume, Kill', (accounts) => {
       assert.equal(checkDevs == 1, checkWeight == 100, "Didn't add developer properly")
     })
 
-
+   //...starts it
     it('Start Contract', async () => {
       //const amount = web3.utils.toWei('2', 'ether');
       //const numberOfWeeks = 4;
@@ -42,7 +43,7 @@ contract('Pause, Resume, Kill', (accounts) => {
       assert.equal(isTrue, true)
     })
 
-
+   //Can it be paused by owner?
     it('Pause Contract', async () => {
       const isOwner = accounts[0];
       const pause = await contractInstance.pauseContract({from:isOwner});
@@ -50,7 +51,7 @@ contract('Pause, Resume, Kill', (accounts) => {
       assert.equal(active, false);
     })
 
-
+   //Can it then also be resumed?
     it('Resume Contract', async () => {
       const isOwner = accounts[0];
       const pause = await contractInstance.resumeContract({from:isOwner});
@@ -58,7 +59,7 @@ contract('Pause, Resume, Kill', (accounts) => {
       assert.equal(active, true);
     })
 
-
+      //Can owner kill it?
     it('Kill Contract', async () => {
       const isOwner = accounts[0];
       try {
