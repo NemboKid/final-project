@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
 
-import "./UsingOraclize.sol";
+import "./usingOraclize.sol";
 
 contract RepoTest is usingOraclize {
 
