@@ -2,10 +2,10 @@ pragma solidity ^0.5.0;
 
 
 // @author Filip Sundgren
-// @title A Simple Bounty Contract
+// @title A Simple Working Contract
 
 
-contract PlatformzNew {
+contract WorkingContract {
 
 
     /**
