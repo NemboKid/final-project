@@ -4,8 +4,12 @@ pragma solidity ^0.5.0;
 // @author Filip Sundgren
 // @title A Simple Working Contract
 
+import "./SafeMath.sol";
 
 contract WorkingContract {
+
+
+using SafeMath for uint256;
 
 
     /**
