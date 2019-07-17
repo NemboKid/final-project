@@ -9,7 +9,7 @@ The contract is constituted out of four steps, together with a total deadline. T
 
 This is indeed a simple bounty contract. I did not aim to copy any other bounty contracts during the creation of this contract, as I wanted to find my own logic and get an understanding of the business purposes. Any similarities with other bounty contracts may appear for obvious reasons, but if so - they are entirely coincedental.
 
-**Contract prerequisities:** The project should have a small and easy scope. The work performed must be digital and presented to the contract's owner before each step's deadline. The purpose of the whole contract is that people should be able to work remotely, and the use of Github, Trello, Appear.in and other resources may come in handy. It's assumed that the developers and the owner have a strong communication and help each other.
+**Contract prerequisities:** The project should have a small and easy scope. The work performed must be digital and presented to the contract's owner before each steps deadline. The purpose of the whole contract is that people should be able to work remotely, and the use of Github, Trello, Appear.in and other resources may come in handy. It's assumed that the developers and the owner have a strong communication and help each other.
 
 ### :bangbang: Important remarks:
 
